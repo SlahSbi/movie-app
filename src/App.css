@@ -1,0 +1,68 @@
+
+.App{
+  display: flex;
+  flex-direction: column;
+}
+.nav-container{
+  margin:60px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+.nav-container > input{
+  width: 40%;
+  height:40px!important;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.nav-container >button{
+  height: 46px;
+  width: 13%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.movie-container{
+  width:30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction:column;
+  border: 2px solid black;
+  height: 0%;
+}
+
+.movie-container >.rating-container{
+  border: 2px solid black;
+  padding: 20px;
+  margin-left:70%;
+}
+.nav-container >.rating-container{
+  margin-left:40px; 
+}
+.movieName{
+  border: 2px solid black;
+  font-size: 30px;
+  text-align: center;
+  padding:5px;
+  
+}
+.card-container{
+ display: flex; 
+ justify-content:space-around;
+ flex-wrap: wrap;
+}
+img{
+  height: 20%;
+  border: 2px solid black;
+}
+.abc
+{
+  display:flex;
+ flex-direction:column;
+ align-items: center;
+  margin-left:20px;
+
+
+}
+
+
