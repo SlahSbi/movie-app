@@ -28,7 +28,7 @@ let arr = [{
   title: 'Mister Bean'
 },
 {
-  id:'5',
+  id: '5',
   rating: '4',
   image: require('./popeye.jpg'),
   title: 'Popeye'
@@ -41,26 +41,30 @@ class App extends Component {
     this.state = {
       filtred1: arr,
       filtred2: arr,
+      arr
 
     }
   }
-  serach=(keyword)=> {
+  serach = (keyword) => {
     let filter1 = arr.filter((el, i) => { return el.title.toLowerCase().indexOf(keyword) > -1 })
     this.setState({ filtred1: filter1 })
   }
-  serachRating=(rating)=> {
+  serachRating = (rating) => {
     let filter2 = arr.filter((el, i) => { return el.rating >= rating })
     this.setState({ filtred2: filter2 })
   }
   addNewMovie(newMovie) {
-    arr.push(newMovie)
+    this.setState({
+      arr: this.state.arr.push(newMovie)
+    })
+   
   }
-  
+
   render() {
     return (<div className="App" >
       <Nav searchname={(keyword) => this.serach(keyword)} searchrating={(rating) => this.serachRating(rating)} />
-      <Card  filtred2={this.state.filtred2} filtred1={this.state.filtred1}  onAddMovie={(newMovie) => this.addNewMovie(newMovie)} />/>
-  
+      <Card filtred2={this.state.filtred2} filtred1={this.state.filtred1} onAddMovie={(newMovie) => this.addNewMovie(newMovie)} />
+
     </div>)
   }
 }
