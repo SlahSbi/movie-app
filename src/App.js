@@ -41,7 +41,8 @@ class App extends Component {
     this.state = {
       filtred1: arr,
       filtred2: arr,
-      arr
+      arr,
+      isLoading:true
 
     }
   }
@@ -59,11 +60,17 @@ class App extends Component {
     })
    
   }
+  componentDidMount(){
+    setTimeout(()=>
+      this.setState({isLoading:false}), 2000
+
+    ) 
+  }
 
   render() {
     return (<div className="App" >
       <Nav searchname={(keyword) => this.serach(keyword)} searchrating={(rating) => this.serachRating(rating)} />
-      <Card filtred2={this.state.filtred2} filtred1={this.state.filtred1} onAddMovie={(newMovie) => this.addNewMovie(newMovie)} />
+      <Card filtred2={this.state.filtred2} filtred1={this.state.filtred1} onAddMovie={(newMovie) => this.addNewMovie(newMovie)} isLoading={this.state.isLoading} />
 
     </div>)
   }

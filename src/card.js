@@ -1,6 +1,7 @@
 import React from 'react';
 import Movie from './movie';
 import AddMovie from './addmovie';
+import Loading from './loading'
 
 const Card = ({ filtred1, filtred2, onAddMovie = () => { } }) => {
 
@@ -18,4 +19,4 @@ const Card = ({ filtred1, filtred2, onAddMovie = () => { } }) => {
 
 
 
-export default Card;
+export default Loading(Card);
